@@ -29,3 +29,7 @@
 .comp {
   display: flex;
 }
+
+.bt {
+  align-items: center ;
+}
