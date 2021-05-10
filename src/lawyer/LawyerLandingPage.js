@@ -1,11 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -19,6 +15,9 @@ import ClientRequests from "./ClientRequests";
 import ApprovedClients from "./ApprovedClients";
 import TransactionHistory from "./TransactionHistory";
 import { Switch, Route, useHistory } from "react-router-dom";
+import Home from "./Home";
+import HomeIcon from "@material-ui/icons/Home";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 const drawerWidth = 240;
 
@@ -42,6 +41,11 @@ function LawyerHomePage(props) {
 
   const menuItems = [
     {
+      Text: "Home",
+      icon: <HomeIcon />,
+      path: "/Home",
+    },
+    {
       Text: "Profile",
       icon: <AccountBoxOutlinedIcon />,
       path: "/Profile",
@@ -60,6 +64,11 @@ function LawyerHomePage(props) {
       Text: "Transaction History",
       icon: <ChromeReaderModeOutlinedIcon />,
       path: "/TransactionHistory",
+    },
+    {
+      Text: "Logout",
+      icon: <ExitToAppIcon />,
+      path: "/Register",
     },
   ];
 
@@ -88,8 +97,10 @@ function LawyerHomePage(props) {
             </ListItem>
           ))}
         </List>
+        <Divider />
       </Drawer>
       <Switch>
+        <Route exact path="/Home" component={Home} />
         <Route exact path="/Profile" component={Profile} />
         <Route exact path="/ClientRequests" component={ClientRequests} />
         <Route exact path="/ApprovedClients" component={ApprovedClients} />
