@@ -92,7 +92,7 @@ const Signup = () => {
               <FormControlLabel
                 value="Client"
                 control={<Radio />}
-                label="Client"
+                label="Client"  
               />
             </RadioGroup>
           </FormControl>

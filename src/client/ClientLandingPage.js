@@ -10,14 +10,16 @@ import VerifiedUserOutlinedIcon from "@material-ui/icons/VerifiedUserOutlined";
 import GroupAddOutlinedIcon from "@material-ui/icons/GroupAddOutlined";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
 import ChromeReaderModeOutlinedIcon from "@material-ui/icons/ChromeReaderModeOutlined";
-import Profile from "./Profile";
-import ClientRequests from "./ClientRequests";
-import ApprovedClients from "./ApprovedClients";
-import TransactionHistory from "./TransactionHistory";
 import { Switch, Route, useHistory } from "react-router-dom";
-import Home from "./Home";
 import HomeIcon from "@material-ui/icons/Home";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Home from "./Home";
+import ApprovedCase from "./ApprovedCase";
+import CaseRequests from "./CaseRequests";
+import Profile from "./Profile";
+import AddNewCase from "./AddNewCase";
+import TransactionHistory from "./TransactionHistory";
+import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 
@@ -37,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function LawyerHomePage(props) {
+function ClientLandingPage(props) {
   const history = useHistory();
   const classes = useStyles();
 
@@ -45,27 +47,32 @@ function LawyerHomePage(props) {
     {
       Text: "Home",
       icon: <HomeIcon />,
-      path: "/Home",
+      path: "/HomeClient",
     },
     {
       Text: "Profile",
       icon: <AccountBoxOutlinedIcon />,
-      path: "/Profile",
+      path: "/ProfileClient",
     },
     {
-      Text: "Client Requests",
+      Text: "Add New Case",
+      icon: <AddToPhotosIcon />,
+      path: "/AddNewCase",
+    },
+    {
+      Text: "Case Requests",
       icon: <GroupAddOutlinedIcon />,
-      path: "/ClientRequests",
+      path: "/CaseRequests",
     },
     {
-      Text: "Approved Clients",
+      Text: "Approved Case",
       icon: <VerifiedUserOutlinedIcon />,
-      path: "/ApprovedClients",
+      path: "/ApprovedCase",
     },
     {
       Text: "Transaction History",
       icon: <ChromeReaderModeOutlinedIcon />,
-      path: "/TransactionHistory",
+      path: "/TransactionHistoryClient",
     },
     {
       Text: "Logout",
@@ -84,7 +91,7 @@ function LawyerHomePage(props) {
         }}
         anchor="left"
       >
-        <h3>CONTENTS</h3>
+        <h3 >CONTENTS</h3>
         <div className={classes.toolbar} />
         <Divider />
         <List>
@@ -101,17 +108,19 @@ function LawyerHomePage(props) {
         </List>
         <Divider />
       </Drawer>
-      <AppBar color="primary">
-        <Toolbar position="static"> </Toolbar>
+      <AppBar  color="primary">
+        <Toolbar position="static">   </Toolbar>
       </AppBar>
+
       <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/Profile" component={Profile} />
-        <Route exact path="/ClientRequests" component={ClientRequests} />
-        <Route exact path="/ApprovedClients" component={ApprovedClients} />
+        <Route exact path="/HomeClient" component={Home} />
+        <Route exact path="/ProfileClient" component={Profile} />
+        <Route exact path="/AddNewCase" component={AddNewCase} />
+        <Route exact path="/CaseRequests" component={CaseRequests} />
+        <Route exact path="/ApprovedCase" component={ApprovedCase} />
         <Route
           exact
-          path="/TransactionHistory"
+          path="/TransactionHistoryClient"
           component={TransactionHistory}
         />
       </Switch>
@@ -119,4 +128,4 @@ function LawyerHomePage(props) {
   );
 }
 
-export default LawyerHomePage;
+export default ClientLandingPage;
