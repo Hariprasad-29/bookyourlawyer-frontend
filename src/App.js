@@ -6,9 +6,9 @@ import LawyerLandingPage from "./lawyer/LawyerLandingPage";
 function App() {
   return (
     <div className="App">
-      {/* <Login />
-      <Register /> */}
-      <LawyerLandingPage/>
+      <Login />
+      <Register />
+      {/* <LawyerLandingPage/> */}
     </div>
   );
 }
