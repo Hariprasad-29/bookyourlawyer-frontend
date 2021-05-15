@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function ApprovedClients() {
-    return (
-        <div>
-            <h1>ApprovedClients Page</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1 style={{ margin: "90px auto" }}>Approved Clients Page</h1>
+    </div>
+  );
 }
 
-export default ApprovedClients
+export default ApprovedClients;

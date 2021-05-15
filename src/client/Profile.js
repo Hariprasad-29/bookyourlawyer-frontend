@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Grid, Paper, Avatar, TextField, Button } from "@material-ui/core";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
+
 
 const Profile = () => {
   const paperStyle = {
@@ -42,11 +39,9 @@ const Profile = () => {
   const [profile, setProfile] = useState({
     namee: "",
     email: "",
-    category: "",
     phoneno: "",
     district: "",
     state: "",
-    Lawyerid: ""
   });
 
   const [terms, setTerms] = useState(false);
@@ -56,7 +51,7 @@ const Profile = () => {
   };
 
   return (
-    <Grid style={grid}>
+    <Grid style={grid}> 
       <Paper elevation={17} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
@@ -121,39 +116,8 @@ const Profile = () => {
             label="State"
             placeholder="Enter your State"
           />
-          <TextField
-            onChange={HandleChange}
-            name="Lawyerid"
-            value={profile.Lawyerid}
-            style={marginSpace2}
-            fullWidth
-            type="text"
-            label="Lawyer ID"
-            placeholder="Enter Lawyer ID"
-          />
           <br />
           <br />
-          <FormControl component="fieldset" style={marginTop}>
-            <FormLabel component="legend">Case Type</FormLabel>
-            <RadioGroup
-              onChange={HandleChange}
-              aria-label="category"
-              name="category"
-              style={{ display: "initial" }}
-            >
-              <FormControlLabel
-                value="Civil"
-                control={<Radio />}
-                label="Civil"
-              />
-              <FormControlLabel
-                value="Criminal"
-                control={<Radio />}
-                label="Criminal"
-              />
-              <FormControlLabel value="Both" control={<Radio />} label="Both" />
-            </RadioGroup>
-          </FormControl>
           <h4 style={{ margin: "30px 0px 0px -500px" }}>
             Terms and conditions:
           </h4>
@@ -189,7 +153,3 @@ const Profile = () => {
 
 export default Profile;
 
-// <FormControlLabel
-// control={<Checkbox name="terms" checked={profile.terms} onChange={HandleChange} />}
-// label="I accept the terms and conditions."
-// />
