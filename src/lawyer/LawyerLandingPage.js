@@ -19,13 +19,34 @@ import Home from "./Home";
 import HomeIcon from "@material-ui/icons/Home";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AppBar from "@material-ui/core/AppBar";
+import { Badge, Grid, IconButton, InputBase } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
+import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+import ForumSharpIcon from "@material-ui/icons/ForumSharp";
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+  },
+  inputRoot: {
+    color: "inherit",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
+    },
+  },
+
+  appbar: {
+    backgroundColor: "#fff",
   },
 
   drawer: {
@@ -84,7 +105,7 @@ function LawyerHomePage(props) {
         }}
         anchor="left"
       >
-        <h3>CONTENTS</h3>
+        <h3 style={{ marginBottom: "20.9px" }}>CONTENTS</h3>
         <div className={classes.toolbar} />
         <Divider />
         <List>
@@ -101,8 +122,34 @@ function LawyerHomePage(props) {
         </List>
         <Divider />
       </Drawer>
-      <AppBar color="primary">
-        <Toolbar position="static"> </Toolbar>
+      <AppBar position="absolute" className={classes.appbar}>
+        <Toolbar>
+          <Grid container>
+            <Grid item sm={6}>
+              <InputBase placeholder="Search…" />
+            </Grid>
+
+            <Grid item sm></Grid>
+
+            <Grid item>
+              <IconButton>
+                <Badge badgeContent={1} color="primary">
+                  <ForumSharpIcon />
+                </Badge>
+              </IconButton>
+
+              <IconButton>
+                <Badge badgeContent={1} color="primary">
+                  <NotificationsActiveIcon />
+                </Badge>
+              </IconButton>
+
+              <IconButton>
+                <SettingsIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        </Toolbar>
       </AppBar>
     </div>
   );

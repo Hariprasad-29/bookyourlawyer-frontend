@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
 
+  appbar: {
+    backgroundColor: "#fff",
+  },
+
   drawer: {
     width: drawerWidth,
   },
@@ -91,7 +95,7 @@ function ClientLandingPage(props) {
         }}
         anchor="left"
       >
-        <h3 >CONTENTS</h3>
+        <h3 style={{marginBottom: "20.9px"}}>CONTENTS</h3>
         <div className={classes.toolbar} />
         <Divider />
         <List>
@@ -108,8 +112,8 @@ function ClientLandingPage(props) {
         </List>
         <Divider />
       </Drawer>
-      <AppBar  color="primary">
-        <Toolbar position="static">   </Toolbar>
+      <AppBar position="absolute" className={classes.appbar}>
+        <Toolbar> </Toolbar>
       </AppBar>
 
       <Switch>
