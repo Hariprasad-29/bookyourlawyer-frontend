@@ -9,6 +9,7 @@ import {
   Link,
 } from "@material-ui/core";
 import HttpsRoundedIcon from "@material-ui/icons/HttpsRounded";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const marginSpace = {
@@ -25,6 +26,8 @@ const Login = () => {
   const avatarStyle = { backgroundColor: "#1bbd7e" };
 
   const btnstyle = { margin: "8px 0" };
+
+  const history = useHistory();
 
   const [state, setstate] = useState({
     username: "",
@@ -86,7 +89,7 @@ const Login = () => {
         </Typography>
         <Typography style={marginSpace}>
           {" "}
-          Do you have an account ? <Link href="#">Sign Up</Link>
+          Do you have an account ? <Link onClick={() => history.push("/register")}>Sign Up</Link>
         </Typography>
       </Paper>
     </Grid>

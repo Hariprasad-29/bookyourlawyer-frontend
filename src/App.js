@@ -3,13 +3,20 @@ import ClientLandingPage from "./client/ClientLandingPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import LawyerLandingPage from "./lawyer/LawyerLandingPage";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Login />
-      <Register />
-      {/* <LawyerLandingPage/> */}
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route path="/login" component={Login} exact />
+        <Route path="/register" component={Register} />
+        <Route path="/client/home" component={ClientLandingPage} />
+        <Route path="/lawyer/home" component={LawyerLandingPage} />
+      </Switch>
     </div>
   );
 }

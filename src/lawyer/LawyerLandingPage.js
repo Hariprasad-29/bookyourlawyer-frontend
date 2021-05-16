@@ -104,17 +104,6 @@ function LawyerHomePage(props) {
       <AppBar color="primary">
         <Toolbar position="static"> </Toolbar>
       </AppBar>
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/Profile" component={Profile} />
-        <Route exact path="/ClientRequests" component={ClientRequests} />
-        <Route exact path="/ApprovedClients" component={ApprovedClients} />
-        <Route
-          exact
-          path="/TransactionHistory"
-          component={TransactionHistory}
-        />
-      </Switch>
     </div>
   );
 }
