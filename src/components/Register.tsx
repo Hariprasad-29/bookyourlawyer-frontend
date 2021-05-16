@@ -36,7 +36,7 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [category, setCategory] = useState("");
-  const [phone_no, setPhoneNo] = useState(0);
+  const [phone_no, setPhoneNo] = useState();
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [terms_checked, setTermsChecked] = useState(false);
@@ -48,7 +48,7 @@ const Signup = () => {
   return (
     <Grid>
       <Paper elevation={17} style={paperStyle}>
-        <Grid align="center">
+        <Grid alignContent="center">
           <Avatar style={avatarStyle}>
           <CreateRoundedIcon/>
           </Avatar>

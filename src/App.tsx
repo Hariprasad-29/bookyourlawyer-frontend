@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import LawyerLandingPage from "./lawyer/LawyerLandingPage";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
+import React from "react";
 
 function App() {
   return (

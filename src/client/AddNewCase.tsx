@@ -55,14 +55,14 @@ function AddNewCase() {
       <h1 style={{ margin: "90px auto 10px auto" }}>Add New Case</h1>
       <Grid style={grid}>
         <Paper elevation={17} style={paperStyle}>
-          <Grid align="center">
+          <Grid alignContent={"center"}>
             <Avatar style={avatarStyle}>
               <NoteAddIcon />
             </Avatar>
             <h2 style={headerStyle}>ADD NEW CASE</h2>
           </Grid>
           <form
-            autocomplete="off"
+            autoComplete="off"
             onSubmit={(e) => {
               e.preventDefault();
               console.log(newcase);

@@ -106,7 +106,6 @@ function LawyerHomePage(props) {
         anchor="left"
       >
         <h3 style={{ marginBottom: "20.9px" }}>CONTENTS</h3>
-        <div className={classes.toolbar} />
         <Divider />
         <List>
           {menuItems.map((items) => (

@@ -46,7 +46,8 @@ const Profile = () => {
     phoneno: "",
     district: "",
     state: "",
-    Lawyerid: ""
+    Lawyerid: "",
+    terms: false
   });
 
   const [terms, setTerms] = useState(false);
@@ -65,7 +66,7 @@ const Profile = () => {
           <h1 style={headerStyle}>PROFILE</h1>
         </Grid>
         <form
-          autocomplete="off"
+          autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();
             console.log(profile);
