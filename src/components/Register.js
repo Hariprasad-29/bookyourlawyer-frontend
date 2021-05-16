@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import CreateRoundedIcon from '@material-ui/icons/CreateRounded';
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const paperStyle = {
@@ -15,6 +16,8 @@ const Signup = () => {
     width: 340,
     margin: "50px auto",
   };
+
+  const history = useHistory();
 
   const headerStyle = { margin: 5 };
 
@@ -30,18 +33,17 @@ const Signup = () => {
     margin: "5px auto",
   };
 
-  const [register, setRegsiter] = useState({
-    namee: "",
-    email: "",
-    category: "",
-    phoneno: "",
-    password: "",
-    confirmpass: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [category, setCategory] = useState("");
+  const [phone_no, setPhoneNo] = useState(0);
+  const [password, setPassword] = useState("");
+  const [confirm_password, setConfirmPassword] = useState("");
+  const [terms_checked, setTermsChecked] = useState(false);
 
-  const HandleChange = (e) => {
-    setRegsiter({ ...register, [e.target.name]: e.target.value });
-  };
+  function register() {
+    console.log(email, name, category, phone_no, password, terms_checked);
+  }
 
   return (
     <Grid>
@@ -55,78 +57,92 @@ const Signup = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(register);
+            register();
           }}
         >
           <TextField
-            onChange={HandleChange}
-            name="namee"
-            value={register.namee}
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+            name="name"
+            value={name}
             style={marginSpace}
             fullWidth
             label="Name"
-            placeholder="Enter your name"
+            placeholder="Enter your Name"
           />
           <TextField
-            onChange={HandleChange}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
             name="email"
-            value={register.email}
+            value={email}
             style={marginSpace}
             fullWidth
             label="Email"
-            placeholder="Enter your email"
+            placeholder="Enter your Email"
           />
           <FormControl component="fieldset" style={marginTop}>
             <FormLabel component="legend">Category</FormLabel>
             <RadioGroup
-              onChange={HandleChange}
+              onChange={(event) => {
+                setCategory(event.target.value);
+              }}
               aria-label="category"
               name="category"
               style={{ display: "initial" }}
             >
               <FormControlLabel
-                value="Lawyer"
+                value="LAWYER"
                 control={<Radio />}
                 label="Lawyer"
               />
               <FormControlLabel
-                value="Client"
+                value="CLIENT"
                 control={<Radio />}
                 label="Client"  
               />
             </RadioGroup>
           </FormControl>
           <TextField
-            onChange={HandleChange}
+            onChange={(event) => {
+              setPhoneNo(event.target.value);
+            }}
             name="phoneno"
-            value={register.phoneno}
+            value={phone_no}
             style={marginSpace2}
             fullWidth
             label="Phone Number"
-            placeholder="Enter your phone number"
+            placeholder="Enter your Phone Number"
           />
           <TextField
-            onChange={HandleChange}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
             name="password"
-            value={register.password}
+            value={password}
             style={marginSpace2}
             fullWidth
             type="password"
             label="Password"
-            placeholder="Enter your password"
+            placeholder="Enter your Password"
           />
           <TextField
-            onChange={HandleChange}
+            onChange={(event) => {
+              setConfirmPassword(event.target.value);
+            }}
             name="confirmpass"
-            value={register.confirmpass}
+            value={confirm_password}
             style={marginSpace2}
             fullWidth
             type="password"
             label="Confirm Password"
-            placeholder="Confirm your password"
+            placeholder="Re-enter your Password"
           />
           <FormControlLabel
-            control={<Checkbox name="checkedA" />}
+            control={<Checkbox checked={terms_checked} name="checkedA" onChange={(event) => {
+              setTermsChecked(!terms_checked)
+            }} />}
             label="I accept the terms and conditions."
           />
           <Button
@@ -134,7 +150,7 @@ const Signup = () => {
             type="submit"
             variant="contained"
             color="primary"
-            onSubmit={() => console.log(register)}
+            onSubmit={register}
           >
             Sign up
           </Button>

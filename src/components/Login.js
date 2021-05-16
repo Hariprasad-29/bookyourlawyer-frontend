@@ -11,7 +11,7 @@ import {
 import HttpsRoundedIcon from "@material-ui/icons/HttpsRounded";
 import { useHistory } from "react-router-dom";
 
-const Login = () => {
+function Login() {
   const marginSpace = {
     margin: "15px auto",
   };
@@ -29,17 +29,12 @@ const Login = () => {
 
   const history = useHistory();
 
-  const [state, setstate] = useState({
-    username: "",
-    password: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const HandleChange = (e) => {
-    setstate({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
+  function login() {
+     console.log(email, password);
+  }
 
   return (
     <Grid>
@@ -53,13 +48,15 @@ const Login = () => {
         <br />
         <TextField
           style={marginSpace}
-          name="username"
-          label="Username"
+          name="email"
+          label="Email"
           variant="outlined"
-          placeholder="Enter username"
+          placeholder="Enter Email"
           fullWidth
-          value={state.username}
-          onChange={HandleChange}
+          value={email}
+          onChange={(event) => {
+            setEmail(event.target.value);
+          }}
         />
         <TextField
           style={marginSpace}
@@ -69,7 +66,10 @@ const Login = () => {
           variant="outlined"
           fullWidth
           type="password"
-          onChange={HandleChange}
+          value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
         />
         <Button
           type="button"
@@ -77,10 +77,7 @@ const Login = () => {
           variant="contained"
           style={btnstyle}
           fullWidth
-          onClick={() => {
-            console.log(state)
-            setstate()
-          }}
+          onClick={login}
         >
           Sign in
         </Button>
