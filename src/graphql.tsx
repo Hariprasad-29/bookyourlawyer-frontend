@@ -4,7 +4,7 @@ import { onError } from "@apollo/client/link/error";
 import { getToken } from "./storage/storage";
 
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_ENDPOINT + "/secure/gomail",
+  uri: "http://localhost:8000/bookyourlawyer",
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {

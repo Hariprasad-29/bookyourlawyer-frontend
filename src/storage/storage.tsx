@@ -26,6 +26,7 @@ export const getUserId = () => {
 };
 
 export const saveUserAccount = (userAccount: Account) => {
+    console.log(userAccount);
   localStorage.setItem(`${getAppName()}-Token`, userAccount.token);
   localStorage.setItem(`${getAppName()}-User`, JSON.stringify(userAccount.user));
 };

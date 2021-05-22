@@ -8,6 +8,30 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import CreateRoundedIcon from '@material-ui/icons/CreateRounded';
 import { useHistory } from "react-router-dom";
+import { saveUserAccount } from "./../storage/storage";
+import { gql, useMutation } from "@apollo/client";
+
+const  REGISTER = gql`
+mutation register(
+  $email: String!
+  $password: String!
+  $category: String!
+  $phone_number: Float!
+  $name: String!
+)
+{
+  register(input: {email: $email, password: $password, category: $category, phone_number: $phone_number, name: $name}) {
+    token
+    user {
+      id
+      email
+      type
+      name
+      phone_number
+    }
+  }
+}
+`;
 
 const Signup = () => {
   const paperStyle = {
@@ -36,19 +60,43 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [category, setCategory] = useState("");
-  const [phone_no, setPhoneNo] = useState();
+  const [phone_number, setPhoneNumber] = useState();
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [terms_checked, setTermsChecked] = useState(false);
 
-  function register() {
-    console.log(email, name, category, phone_no, password, terms_checked);
+
+  const [register, {data, error, loading}] = useMutation(REGISTER, {
+    variables: {
+      name,
+      email,
+      category,
+      phone_number,
+      password
+    }
+  })
+
+  function confirmRegister() {
+    console.log("comes inside function");
+    if(password === confirm_password) {
+      register()
+      .then((result) => {
+        saveUserAccount(result?.data.register);
+        if(category === "LAWYER") {
+          history.push("/lawyer/home");
+        }
+        else{ 
+          history.push("/client/home");
+        }
+      })
+    }
   }
+
 
   return (
     <Grid>
       <Paper elevation={17} style={paperStyle}>
-        <Grid alignContent="center">
+        <Grid align="center">
           <Avatar style={avatarStyle}>
           <CreateRoundedIcon/>
           </Avatar>
@@ -106,10 +154,10 @@ const Signup = () => {
           </FormControl>
           <TextField
             onChange={(event) => {
-              setPhoneNo(event.target.value);
+              setPhoneNumber(parseFloat(event.target.value));
             }}
             name="phoneno"
-            value={phone_no}
+            value={phone_number}
             style={marginSpace2}
             fullWidth
             label="Phone Number"
@@ -150,7 +198,7 @@ const Signup = () => {
             type="submit"
             variant="contained"
             color="primary"
-            onSubmit={register}
+            onClick={confirmRegister}
           >
             Sign up
           </Button>

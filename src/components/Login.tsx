@@ -9,7 +9,24 @@ import {
   Link,
 } from "@material-ui/core";
 import HttpsRoundedIcon from "@material-ui/icons/HttpsRounded";
+import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { saveUserAccount } from "../storage/storage";
+
+const LOGIN = gql`
+mutation($email: String!, $password: String!) {
+  login(input: {email: $email, password: $password}) {
+    token
+    user {
+      id
+      email
+      type
+      name
+      phone_number
+    }
+  }
+}
+`;
 
 function Login() {
   const marginSpace = {
@@ -31,9 +48,24 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginUser, {data, loading, error}] = useMutation(LOGIN, {
+    variables: {
+      email: email,
+      password: password
+    }
+  })
 
   function login() {
-     console.log(email, password);
+     loginUser()
+     .then((result) => {
+       saveUserAccount(result?.data?.login);
+       if(result?.data?.login.user.type === "LAWYER") {
+         history.push('/lawyer/home');
+       }
+       else {
+         history.push("/client/home");
+       }
+     })
   }
 
   return (
