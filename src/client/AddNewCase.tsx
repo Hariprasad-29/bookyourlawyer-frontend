@@ -8,6 +8,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
+import { ClientPanel } from "./ClientPanel";
 
 function AddNewCase() {
   const [newcase, setNewCase] = useState({
@@ -26,7 +27,7 @@ function AddNewCase() {
     padding: 20,
     height: "83vh",
     width: 800,
-    margin: "30px 0px 40px 180px",
+    margin: "auto",
     backgroundColor: "#ECDCD8",
   };
 
@@ -51,18 +52,18 @@ function AddNewCase() {
   };
 
   return (
-    <div>
-      <h1 style={{ margin: "90px auto 10px 480px" }}>Add New Case</h1>
+    <ClientPanel title="Add New Case">
+          <div>
       <Grid style={grid}>
         <Paper elevation={17} style={paperStyle}>
-          <Grid align="center">
+          <Grid alignContent={"center"}>
             <Avatar style={avatarStyle}>
               <NoteAddIcon />
             </Avatar>
             <h2 style={headerStyle}>ADD NEW CASE</h2>
           </Grid>
           <form
-            autocomplete="off"
+            autoComplete="off"
             onSubmit={(e) => {
               e.preventDefault();
               console.log(newcase);
@@ -145,6 +146,8 @@ function AddNewCase() {
         </Paper>
       </Grid>
     </div>
+    </ClientPanel>
+
   );
 }
 

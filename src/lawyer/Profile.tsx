@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Grid, Paper, Avatar, TextField, Button } from "@material-ui/core";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
-
+import { LawyerPanel } from "./LawyerPanel";
 
 const Profile = () => {
   const paperStyle = {
     padding: 20,
     height: "85vh",
     width: 800,
-    margin: "100px 0px 70px 200px",
+    margin: "auto",
     backgroundColor: "#ECDCD8",
-    // alignItems: "center"
   };
 
   const headerStyle = { margin: 5 };
@@ -38,9 +41,12 @@ const Profile = () => {
   const [profile, setProfile] = useState({
     namee: "",
     email: "",
+    category: "",
     phoneno: "",
     district: "",
     state: "",
+    Lawyerid: "",
+    terms: false
   });
 
   const [terms, setTerms] = useState(false);
@@ -50,7 +56,8 @@ const Profile = () => {
   };
 
   return (
-    <Grid style={grid}> 
+    <LawyerPanel title="Profile" >
+          <Grid style={grid}>
       <Paper elevation={17} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
@@ -59,7 +66,7 @@ const Profile = () => {
           <h1 style={headerStyle}>PROFILE</h1>
         </Grid>
         <form
-          autocomplete="off"
+          autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();
             console.log(profile);
@@ -115,8 +122,39 @@ const Profile = () => {
             label="State"
             placeholder="Enter your State"
           />
+          <TextField
+            onChange={HandleChange}
+            name="Lawyerid"
+            value={profile.Lawyerid}
+            style={marginSpace2}
+            fullWidth
+            type="text"
+            label="Lawyer ID"
+            placeholder="Enter Lawyer ID"
+          />
           <br />
           <br />
+          <FormControl component="fieldset" style={marginTop}>
+            <FormLabel component="legend">Case Type</FormLabel>
+            <RadioGroup
+              onChange={HandleChange}
+              aria-label="category"
+              name="category"
+              style={{ display: "initial" }}
+            >
+              <FormControlLabel
+                value="Civil"
+                control={<Radio />}
+                label="Civil"
+              />
+              <FormControlLabel
+                value="Criminal"
+                control={<Radio />}
+                label="Criminal"
+              />
+              <FormControlLabel value="Both" control={<Radio />} label="Both" />
+            </RadioGroup>
+          </FormControl>
           <h4 style={{ margin: "30px 0px 0px -500px" }}>
             Terms and conditions:
           </h4>
@@ -147,8 +185,10 @@ const Profile = () => {
         </form>
       </Paper>
     </Grid>
+    </LawyerPanel>
   );
 };
 
 export default Profile;
+
 

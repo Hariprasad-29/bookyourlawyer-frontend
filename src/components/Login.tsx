@@ -9,8 +9,26 @@ import {
   Link,
 } from "@material-ui/core";
 import HttpsRoundedIcon from "@material-ui/icons/HttpsRounded";
+import { gql, useMutation } from "@apollo/client";
+import { useHistory } from "react-router-dom";
+import { saveUserAccount } from "../storage/storage";
 
-const Login = () => {
+const LOGIN = gql`
+mutation($email: String!, $password: String!) {
+  login(input: {email: $email, password: $password}) {
+    token
+    user {
+      id
+      email
+      type
+      name
+      phone_number
+    }
+  }
+}
+`;
+
+function Login() {
   const marginSpace = {
     margin: "15px auto",
   };
@@ -19,7 +37,7 @@ const Login = () => {
     padding: 20,
     height: "75vh",
     width: 340,
-    margin: "0px 150px 0px 0px",
+    margin: "50px auto",
     borderRadius: "20px"
   };
 
@@ -27,17 +45,29 @@ const Login = () => {
 
   const btnstyle = { margin: "8px 0" };
 
-  const [state, setstate] = useState({
-    username: "",
-    password: "",
-  });
+  const history = useHistory();
 
-  const HandleChange = (e) => {
-    setstate({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginUser, {data, loading, error}] = useMutation(LOGIN, {
+    variables: {
+      email: email,
+      password: password
+    }
+  })
+
+  function login() {
+     loginUser()
+     .then((result) => {
+       saveUserAccount(result?.data?.login);
+       if(result?.data?.login.user.type === "LAWYER") {
+         history.push('/lawyer/home');
+       }
+       else {
+         history.push("/client/home");
+       }
+     })
+  }
 
   return (
     <Grid>
@@ -51,13 +81,15 @@ const Login = () => {
         <br />
         <TextField
           style={marginSpace}
-          name="username"
-          label="Username"
+          name="email"
+          label="Email"
           variant="outlined"
-          placeholder="Enter username"
+          placeholder="Enter Email"
           fullWidth
-          value={state.username}
-          onChange={HandleChange}
+          value={email}
+          onChange={(event) => {
+            setEmail(event.target.value);
+          }}
         />
         <TextField
           style={marginSpace}
@@ -67,7 +99,10 @@ const Login = () => {
           variant="outlined"
           fullWidth
           type="password"
-          onChange={HandleChange}
+          value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
         />
         <Button
           type="button"
@@ -75,10 +110,7 @@ const Login = () => {
           variant="contained"
           style={btnstyle}
           fullWidth
-          onClick={() => {
-            console.log(state)
-            setstate()
-          }}
+          onClick={login}
         >
           Sign in
         </Button>
@@ -87,7 +119,7 @@ const Login = () => {
         </Typography>
         <Typography style={marginSpace}>
           {" "}
-          Don't have an account ? <Link href="#">Sign Up</Link>
+          Do you have an account ? <Link onClick={() => history.push("/register")}>Sign Up</Link>
         </Typography>
       </Paper>
     </Grid>
