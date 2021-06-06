@@ -17,15 +17,6 @@ import GroupAddOutlinedIcon from "@material-ui/icons/GroupAddOutlined";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
 import ChromeReaderModeOutlinedIcon from "@material-ui/icons/ChromeReaderModeOutlined";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import AllInboxIcon from "@material-ui/icons/AllInbox";
-import CancelIcon from "@material-ui/icons/Cancel";
-import ChatIcon from "@material-ui/icons/Chat";
-import CheckIcon from "@material-ui/icons/Check";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import DeleteIcon from "@material-ui/icons/Delete";
-import DoneAllIcon from "@material-ui/icons/DoneAll";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
 import React, { useEffect, useState } from "react";
 import HomeIcon from "@material-ui/icons/Home";
 
