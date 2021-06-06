@@ -42,18 +42,6 @@ function LawyerHeader(props: Props) {
             {props.title}
           </Typography>
           <div className={classes.grow} />
-          <Grid container>
-            <Grid item sm></Grid>
-            <Grid item>
-              <IconButton onClick={() => {
-                  history.push("/login");
-              }}>
-                <ExitToAppIcon style={{
-                    color: "white"
-                }} />
-              </IconButton>
-            </Grid>
-          </Grid>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>

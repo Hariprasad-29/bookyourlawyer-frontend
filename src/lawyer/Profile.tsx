@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
+import { LawyerPanel } from "./LawyerPanel";
 
 const Profile = () => {
   const paperStyle = {
@@ -14,7 +15,7 @@ const Profile = () => {
     height: "85vh",
     width: 800,
     // margin: "50px -380px 40px 100px"
-    margin: "90px auto",
+    margin: "auto",
     backgroundColor: "#ECDCD8",
     // alignItems: "center"
   };
@@ -57,7 +58,8 @@ const Profile = () => {
   };
 
   return (
-    <Grid style={grid}>
+    <LawyerPanel title="Profile" >
+          <Grid style={grid}>
       <Paper elevation={17} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
@@ -185,6 +187,7 @@ const Profile = () => {
         </form>
       </Paper>
     </Grid>
+    </LawyerPanel>
   );
 };
 

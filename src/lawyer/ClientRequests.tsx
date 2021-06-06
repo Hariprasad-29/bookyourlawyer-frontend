@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { LawyerPanel } from "./LawyerPanel";
 function ClientRequests() {
   const [requests, setRequests] = useState([
     {
@@ -19,17 +19,18 @@ function ClientRequests() {
     },
   ]);
   return (
-    <div>
-      <h1 style={{ margin: "90px auto 50px auto" }}>Client Requests</h1>
+    <LawyerPanel title={"Client Requests"}>
+      <div>
       {requests.map((det) => (
-        <div class="card">
+        <div className="card">
           <p>Client Name: {det.clientName}</p>
           <p>Case Description: {det.caseDescription}</p>
           <button className="btn">Accept</button>
           <button className="btn">Reject</button>
         </div>
       ))}
-    </div>
+      </div>
+    </LawyerPanel>
   );
 }
 

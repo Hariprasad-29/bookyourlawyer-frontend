@@ -1,10 +1,11 @@
 import React from "react";
+import { LawyerPanel } from "./LawyerPanel";
 
 function Home() {
   return (
-    <div>
-      <h1 style={{ margin: "90px auto" }}>Home Page</h1>
-    </div>
+   <LawyerPanel title={"Home"}>
+     <p>hi welocme to home page</p>
+   </LawyerPanel>
   );
 }
 
