@@ -8,7 +8,7 @@ export const getToken = () => {
   return localStorage.getItem(`${getAppName()}-Token`);
 };
 
-export const getUser = (): User | null => {
+export const getUser = () => {
   const user = localStorage.getItem(`${getAppName()}-User`);
   if (user) {
     return JSON.parse(user);
