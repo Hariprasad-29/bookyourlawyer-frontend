@@ -26,7 +26,7 @@ function AddNewCase() {
     padding: 20,
     height: "83vh",
     width: 800,
-    margin: "30px auto 40px auto",
+    margin: "30px 0px 40px 180px",
     backgroundColor: "#ECDCD8",
   };
 
@@ -52,7 +52,7 @@ function AddNewCase() {
 
   return (
     <div>
-      <h1 style={{ margin: "90px auto 10px auto" }}>Add New Case</h1>
+      <h1 style={{ margin: "90px auto 10px 480px" }}>Add New Case</h1>
       <Grid style={grid}>
         <Paper elevation={17} style={paperStyle}>
           <Grid align="center">

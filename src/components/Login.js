@@ -19,7 +19,8 @@ const Login = () => {
     padding: 20,
     height: "75vh",
     width: 340,
-    margin: "50px auto",
+    margin: "0px 150px 0px 0px",
+    borderRadius: "20px"
   };
 
   const avatarStyle = { backgroundColor: "#1bbd7e" };
@@ -86,7 +87,7 @@ const Login = () => {
         </Typography>
         <Typography style={marginSpace}>
           {" "}
-          Do you have an account ? <Link href="#">Sign Up</Link>
+          Don't have an account ? <Link href="#">Sign Up</Link>
         </Typography>
       </Paper>
     </Grid>

@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   appbar: {
-    backgroundColor: "#fff",
+    backgroundColor: "#0D5E9F",
   },
 
   drawer: {
@@ -55,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
 
   drawerPaper: {
     width: drawerWidth,
+  },
+
+  iconColor: {
+    color: "#fff",
   },
 }));
 
@@ -125,27 +129,23 @@ function LawyerHomePage(props) {
       <AppBar position="absolute" className={classes.appbar}>
         <Toolbar>
           <Grid container>
-            <Grid item sm={6}>
-              <InputBase placeholder="Search…" />
-            </Grid>
-
             <Grid item sm></Grid>
 
             <Grid item>
               <IconButton>
-                <Badge badgeContent={1} color="primary">
-                  <ForumSharpIcon />
+                <Badge badgeContent={1} color="secondary">
+                  <ForumSharpIcon className={classes.iconColor} />
                 </Badge>
               </IconButton>
 
               <IconButton>
-                <Badge badgeContent={1} color="primary">
-                  <NotificationsActiveIcon />
+                <Badge badgeContent={1} color="secondary">
+                  <NotificationsActiveIcon className={classes.iconColor} />
                 </Badge>
               </IconButton>
 
               <IconButton>
-                <SettingsIcon />
+                <SettingsIcon className={classes.iconColor} />
               </IconButton>
             </Grid>
           </Grid>

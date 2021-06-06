@@ -10,8 +10,7 @@ const Profile = () => {
     padding: 20,
     height: "85vh",
     width: 800,
-    // margin: "50px -380px 40px 100px"
-    margin: "90px auto",
+    margin: "100px 0px 70px 200px",
     backgroundColor: "#ECDCD8",
     // alignItems: "center"
   };

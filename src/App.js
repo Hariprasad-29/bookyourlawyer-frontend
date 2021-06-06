@@ -1,5 +1,6 @@
 import "./App.css";
 import ClientLandingPage from "./client/ClientLandingPage";
+import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import LawyerLandingPage from "./lawyer/LawyerLandingPage";
@@ -7,16 +8,15 @@ import LawyerLandingPage from "./lawyer/LawyerLandingPage";
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      {/* <Login />
-      <Register /> */}
-      <LawyerLandingPage/>
-      {/* <ClientLandingPage/> */}
-=======
-      <Login />
-      <Register />
+      <div className="title">
+        <h1>BOOK YOUR LAWYER</h1>
+      </div>
+      <div className="body">
+        <HomePage />
+        <Login />
+      </div>
       {/* <LawyerLandingPage/> */}
->>>>>>> 69df669f31b5fe7e0386c67b2eab32707992dfc9
+      {/* <ClientLandingPage/> */}
     </div>
   );
 }
