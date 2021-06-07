@@ -12,6 +12,7 @@ import HttpsRoundedIcon from "@material-ui/icons/HttpsRounded";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
 import { saveUserAccount } from "../storage/storage";
+import ParticleBackground from "../particle-js/ParticleBackground";
 
 const LOGIN = gql`
 mutation($email: String!, $password: String!) {
@@ -34,6 +35,7 @@ function Login() {
   };
 
   const paperStyle = {
+    opacity: "5px",
     padding: 20,
     height: "75vh",
     width: 340,
@@ -70,7 +72,16 @@ function Login() {
   }
 
   return (
-    <Grid>
+    <>
+      <div className="main">
+        <div className="particle">
+        <h1 style={{color: "#ffffff"}}>BOOK YOUR LAWYER</h1>  
+        <ParticleBackground/>
+        </div>
+ 
+        <div className="login">
+          
+      <Grid>
       <Paper elevation={17} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
@@ -123,6 +134,11 @@ function Login() {
         </Typography>
       </Paper>
     </Grid>
+    </div>
+ 
+      </div>
+
+    </>
   );
 };
 
