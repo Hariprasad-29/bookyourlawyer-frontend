@@ -16,6 +16,7 @@ import VerifiedUserOutlinedIcon from "@material-ui/icons/VerifiedUserOutlined";
 import GroupAddOutlinedIcon from "@material-ui/icons/GroupAddOutlined";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
 import ChromeReaderModeOutlinedIcon from "@material-ui/icons/ChromeReaderModeOutlined";
+import GavelIcon from '@material-ui/icons/Gavel';
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import React, { useEffect, useState } from "react";
 import HomeIcon from "@material-ui/icons/Home";
@@ -65,6 +66,7 @@ export function ClientSideBar() {
         <SideBarItem link={"/client/profile"} icon={<AccountBoxOutlinedIcon />} text="Profile" />
         <SideBarItem link={"/client/addnewcase"} icon={<GroupAddOutlinedIcon />} text="Add New Case" />
         <SideBarItem link={"/client/caserequests"} icon={<VerifiedUserOutlinedIcon />} text="Case Requests"  />
+        <SideBarItem link={"/client/laywerlist"} icon={<GavelIcon />} text="Lawyers List"  />
         <SideBarItem link={"/client/approvedcase"} icon={<ChromeReaderModeOutlinedIcon />} text="Approved Case"  />
         <SideBarItem link={"/client/transactionhistory"} icon={<ChromeReaderModeOutlinedIcon />} text="Transaction History"  />
       </List>

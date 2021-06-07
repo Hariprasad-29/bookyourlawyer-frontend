@@ -11,6 +11,7 @@ import ClientAddNewCase from "./client/AddNewCase";
 import ClientCaseRequests from "./client/CaseRequests";
 import ClientApprovedCase from "./client/ApprovedCase";
 import ClientTransactionHistory from "./client/TransactionHistory";
+import LawyerList from "./client/LawyersList";
 
 import LawyerProfile from "./lawyer/Profile";
 import LawyerHome from "./lawyer/Home";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/client/addnewcase" component={ClientAddNewCase} />
         <Route path="/client/caserequests" component={ClientCaseRequests} />
         <Route path="/client/approvedcase" component={ClientApprovedCase} />
+        <Route path="/client/laywerlist" component={LawyerList} />
         <Route path="/client/transactionhistory" component={ClientTransactionHistory} />
         <Route path="/lawyer/home" component={LawyerHome} />
         <Route path="/lawyer/profile" component={LawyerProfile} />
