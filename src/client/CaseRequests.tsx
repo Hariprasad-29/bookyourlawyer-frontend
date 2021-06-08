@@ -1,12 +1,11 @@
 import React from 'react'
-import { ClientPanel } from './ClientPanel'
+import { ClientPanel } from "./ClientPanel"
+import CaseRequestsBox from '../components/CaseRequestsBox'
 
 function CaseRequests() {
     return (
         <ClientPanel title="Case Requests">
-        <div>
-            <h1 style={{margin: "auto"}}>Case Requests</h1>
-        </div>
+            <CaseRequestsBox />
         </ClientPanel>
 
     )
