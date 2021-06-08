@@ -12,7 +12,8 @@ const Profile = () => {
     height: "85vh",
     width: 800,
     margin: "auto",
-    backgroundColor: "#ECDCD8",
+    backgroundColor: "#0000",
+    borderRadius: 20,
   };
 
   const headerStyle = { margin: 5 };
