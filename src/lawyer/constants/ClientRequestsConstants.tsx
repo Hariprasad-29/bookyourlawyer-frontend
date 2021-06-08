@@ -1,0 +1,42 @@
+export const CLIENT_REQUESTS = [
+    {
+        name: "Joey",
+        case_type: "Criminal",
+        id: "1",
+        email: "ananth@gmail.com",
+        phone_no: 1234567890,
+        city: "Chennai",
+      },
+      {
+        name: "Rajesh",
+        case_type: "Civil",
+        id: "1",
+        email: "ananth@gmail.com",
+        phone_no: 1234567890,
+        city: "Bangalore",
+      },
+      {
+        name: "Penny",
+        case_type: "Civil",
+        id: "1",
+        email: "ananth@gmail.com",
+        phone_no: 1234567890,
+        city: "Mumbai",
+      },
+      {
+        name: "Chandler",
+        case_type: "Criminal/Civil",
+        id: "1",
+        email: "ananth@gmail.com",
+        phone_no: 1234567890,
+        city: "Kolkatta",
+      },
+      {
+        name: "Leonard",
+        case_type: "Criminal/Civil",
+        id: "1",
+        email: "ananth@gmail.com",
+        phone_no: 1234567890,
+        city: "Goa",
+      },
+];
