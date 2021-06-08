@@ -15,6 +15,8 @@ function AddNewCase() {
     casetitle: "",
     casecategory: "",
     casedescription: "",
+    lawyerId: ""
+    
   });
 
   const [terms, setTerms] = useState(false);
@@ -28,7 +30,8 @@ function AddNewCase() {
     height: "83vh",
     width: 800,
     margin: "auto",
-    backgroundColor: "#ECDCD8",
+    backgroundColor: "#0000",
+    borderRadius: 20,
   };
 
   const headerStyle = { margin: 5 };
@@ -111,6 +114,18 @@ function AddNewCase() {
               onChange={HandleChange}
               name="casedescription"
               value={newcase.casedescription}
+              style={marginSpace}
+            />
+            <br />
+            <TextField
+              id="outlined-multiline-static"
+              label="Lawyer ID"
+              rows={6}
+              placeholder="Enter lawyer ID"
+              variant="outlined"
+              onChange={HandleChange}
+              name="lawyerid"
+              value={newcase.lawyerId}
               style={marginSpace}
             />
             <br />
