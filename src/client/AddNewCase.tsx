@@ -9,6 +9,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import { ClientPanel } from "./ClientPanel";
+import { useSnackbar } from "notistack";
 
 function AddNewCase() {
   const [newcase, setNewCase] = useState({
@@ -19,11 +20,19 @@ function AddNewCase() {
     
   });
 
+  const { enqueueSnackbar } = useSnackbar();
+
   const [terms, setTerms] = useState(false);
 
   const HandleChange = (e) => {
     setNewCase({ ...newcase, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = () => {
+    enqueueSnackbar("Case added successfully!", {
+      variant: "success"
+    });
+  }
 
   const paperStyle = {
     padding: 20,
@@ -60,9 +69,7 @@ function AddNewCase() {
       <Grid style={grid}>
         <Paper elevation={17} style={paperStyle}>
           <Grid alignContent={"center"}>
-            <Avatar style={avatarStyle}>
-              <NoteAddIcon />
-            </Avatar>
+            <br />
             <h2 style={headerStyle}>ADD NEW CASE</h2>
           </Grid>
           <form
@@ -154,6 +161,7 @@ function AddNewCase() {
               type="submit"
               variant="contained"
               color="primary"
+              onClick={handleSubmit}
             >
               Add Case
             </Button>
