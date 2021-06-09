@@ -13,10 +13,10 @@ import { useSnackbar } from "notistack";
 
 function AddNewCase() {
   const [newcase, setNewCase] = useState({
-    casetitle: "",
-    casecategory: "",
-    casedescription: "",
-    lawyerId: ""
+    casetitle: "Test Case tile",
+    casecategory: "CRIMINAL",
+    casedescription: "This is a test case description to enusure the working of the functionality",
+    lawyerId: "#00021"
     
   });
 
