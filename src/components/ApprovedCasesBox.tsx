@@ -116,7 +116,7 @@ export default function CaseRequestsBox(props: Props) {
           >
             <div style={{ marginRight: "20px" }}>
               <Button variant="contained" color="primary">
-                Pay now
+                {props.status === "Completed"? ' view invoice' : "pay now"}
               </Button>
             </div>
             <div>
