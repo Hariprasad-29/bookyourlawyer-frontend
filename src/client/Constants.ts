@@ -198,3 +198,82 @@ export const TRANSACTION_HISTORY = [
     status: "Completed",
   },
 ];
+
+
+export const ACTIVE_CASES = [
+  {
+      client_name: "Barry Allen",
+      id: "12",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Chennai",
+      case_type: "Criminal",
+
+    },
+    {
+      client_name: "Iris West",
+      id: "21",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Bangalore",
+      case_type: "Criminal",
+
+    },
+    {
+      client_name: "Gunther",
+      id: "25",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Kolkatta",
+      case_type: "Civil",
+
+    },
+    {
+      client_name: "John Doe",
+      id: "51",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Bangalore",
+      case_type: "Criminal",
+
+    },
+    {
+      client_name: "Jane Doe",
+      id: "67",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Kolkatta",
+      case_type: "Civil",
+
+    },
+];
+
+export const COMPLETED_CASES = [
+  {
+      client_name: "Barry Allen",
+      id: "11",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Chennai",
+      case_type: "Criminal",
+
+    },
+    {
+      client_name: "Iris West",
+      id: "42",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Kolkatta",
+      case_type: "Civil",
+
+    },
+    {
+      client_name: "Jack",
+      id: "51",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Chennai",
+      case_type: "Criminal",
+
+    },
+    {
+      client_name: "David",
+      id: "31",
+      description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!",
+      city: "Kolkatta",
+      case_type: "Civil",
+
+    },
+];

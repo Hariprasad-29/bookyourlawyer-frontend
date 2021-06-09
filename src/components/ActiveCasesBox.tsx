@@ -12,7 +12,8 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     maxWidth: "1000px",
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 20,
   },
   textRating: {
     marginTop: -10,

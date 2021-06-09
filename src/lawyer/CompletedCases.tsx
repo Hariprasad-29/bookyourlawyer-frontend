@@ -1,11 +1,9 @@
 import React from 'react';
-import { LawyerPanel } from "./LawyerPanel";
 import CompletedCasesBox from "../components/CompletedCasesBox";
 import { COMPLETED_CASES } from "../lawyer/constants/CompletedCasesBox"
 
 function CompletedCases() {
     return (
-        <LawyerPanel title="Approved Clients" >
         <div>
         {COMPLETED_CASES.map((item, index) => {
             return (
@@ -19,7 +17,6 @@ function CompletedCases() {
             );
           })}
         </div>
-      </LawyerPanel>
     )
 }
 

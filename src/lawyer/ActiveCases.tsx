@@ -5,7 +5,6 @@ import ActiveCasesBox from "../components/ActiveCasesBox"
 
 function ActiveCases() {
     return (
-        <LawyerPanel title="Approved Clients" >
         <div>
         {ACTIVE_CASES.map((item, index) => {
             return (
@@ -19,7 +18,7 @@ function ActiveCases() {
             );
           })}
         </div>
-      </LawyerPanel>
+
     )
 }
 

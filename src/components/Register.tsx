@@ -40,7 +40,6 @@ const Signup = () => {
     padding: 20,
     maxHeight: 800,
     width: 340,
-    marginBottom: 50,
     margin: "50px auto",
     borderRadius: "20px",
   };
