@@ -44,12 +44,14 @@ interface Props {
   name?: string;
   id?: string;
   description?: string;
-  case_type?: string;
+  status?: string;
   amount?: number;
 }
 
 export default function CaseRequestsBox(props: Props) {
   const classes = useStyles();
+
+  const statusColor = props.status === "Ongoing" ? "#ffff00" : "#00ff00";
 
   return (
     <Card className={classes.root}>
@@ -86,8 +88,17 @@ export default function CaseRequestsBox(props: Props) {
           </div>
           <div className={classes.contentBelow}>
             <div>
-              <Typography>
-                <h4>Case Type: {props.case_type} </h4>
+              <Typography >
+                <div style={{
+                    display: "flex",
+                    flexDirection: "row"
+                }}>
+                <h4>Status:  </h4>
+                <h4 style={{
+                    color: statusColor,
+                    marginLeft: 10,
+                }} >{props.status}</h4>
+                </div>
               </Typography>
             </div>
             <div>
@@ -105,7 +116,7 @@ export default function CaseRequestsBox(props: Props) {
           >
             <div style={{ marginRight: "20px" }}>
               <Button variant="contained" color="primary">
-                Notify Lawyer
+                Pay now
               </Button>
             </div>
             <div>

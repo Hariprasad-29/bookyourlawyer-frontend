@@ -97,3 +97,53 @@ export const CLIENT_REQUESTS = [
   
 ]
 
+export const APPROVED_CLIENT_REQUESTS = [
+  {
+    name: "Jimmy",
+    status: "Ongoing",
+    id:"2",
+    amount: 3000,
+    description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
+  },
+  {
+    name: "James corden",
+    status: "Ongoing",
+    id:"23",
+    amount: 2000,
+    description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
+  },
+  
+  {
+    name: "Sheldon",
+    status: "Completed",
+    id:"22",
+    amount: 5000,
+    description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
+  },
+  
+  {
+    name: "Tomy",
+    status: "Ongoing",
+    id:"52",
+    amount: 1000,
+    description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
+  },
+  
+  {
+    name: "Jack",
+    status: "Completed",
+    id:"2",
+    amount: 500,
+    description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
+  },
+  
+  {
+    name: "Jimmy",
+    status: "Ongoing",
+    id:"21",
+    amount: 3000,
+    description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
+  },
+  
+]
+
