@@ -11,6 +11,7 @@ import CreateRoundedIcon from '@material-ui/icons/CreateRounded';
 import { useHistory } from "react-router-dom";
 import { saveUserAccount } from "./../storage/storage";
 import { gql, useMutation } from "@apollo/client";
+import ParticleBackground from "../particle-js/ParticleBackground";
 
 const  REGISTER = gql`
 mutation register(
@@ -96,122 +97,135 @@ const Signup = () => {
 
 
   return (
-    <Grid>
-      <Paper elevation={17} style={paperStyle}>
-        <Grid align="center">
-          <Avatar style={avatarStyle}>
-          <CreateRoundedIcon/>
-          </Avatar>
-          <h1 style={headerStyle}>REGISTER</h1>
-        </Grid>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            register();
-          }}
-        >
-          <TextField
-            onChange={(event) => {
-              setName(event.target.value);
+    <>
+    <div className="main2">
+      <div className="particles">
+      <h1 style={{color: "#ffffff"}}>BOOK YOUR LAWYER</h1>  
+        <ParticleBackground/>
+      </div>
+
+           <div className="register">
+        <Grid>
+        <Paper elevation={17} style={paperStyle}>
+          <Grid align="center">
+            <Avatar style={avatarStyle}>
+            <CreateRoundedIcon/>
+            </Avatar>
+            <h1 style={headerStyle}>REGISTER</h1>
+          </Grid>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              register();
             }}
-            name="name"
-            value={name}
-            style={marginSpace}
-            fullWidth
-            label="Name"
-            placeholder="Enter your Name"
-          />
-          <TextField
-            onChange={(event) => {
-              setEmail(event.target.value);
-            }}
-            name="email"
-            value={email}
-            style={marginSpace}
-            fullWidth
-            label="Email"
-            placeholder="Enter your Email"
-          />
-          <FormControl component="fieldset" style={marginTop}>
-            <FormLabel component="legend">Category</FormLabel>
-            <RadioGroup
-              onChange={(event) => {
-                setCategory(event.target.value);
-              }}
-              aria-label="category"
-              name="category"
-              style={{ display: "initial" }}
-            >
-              <FormControlLabel
-                value="LAWYER"
-                control={<Radio />}
-                label="Lawyer"
-              />
-              <FormControlLabel
-                value="CLIENT"
-                control={<Radio />}
-                label="Client"  
-              />
-            </RadioGroup>
-          </FormControl>
-          <TextField
-            onChange={(event) => {
-              setPhoneNumber(parseFloat(event.target.value));
-            }}
-            name="phoneno"
-            value={phone_number}
-            style={marginSpace2}
-            fullWidth
-            label="Phone Number"
-            placeholder="Enter your Phone Number"
-          />
-          <TextField
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
-            name="password"
-            value={password}
-            style={marginSpace2}
-            fullWidth
-            type="password"
-            label="Password"
-            placeholder="Enter your Password"
-          />
-          <TextField
-            onChange={(event) => {
-              setConfirmPassword(event.target.value);
-            }}
-            name="confirmpass"
-            value={confirm_password}
-            style={marginSpace2}
-            fullWidth
-            type="password"
-            label="Confirm Password"
-            placeholder="Re-enter your Password"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={terms_checked} name="checkedA" onChange={(event) => {
-              setTermsChecked(!terms_checked)
-            }} />}
-            label="I accept the terms and conditions."
-          />
-          <Button
-            style={{ marginTop: "5px" }}
-            type="submit"
-            variant="contained"
-            color="primary"
-            onClick={confirmRegister}
           >
-            Sign up
-          </Button>
-        </form>
-        <Typography style={marginSpace}>
-          {" "}
-          Already have an account ? <Link onClick={() => history.push("/login")}>Login</Link>
-        </Typography>
-      </Paper>
-    </Grid>
+            <TextField
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+              name="name"
+              value={name}
+              style={marginSpace}
+              fullWidth
+              label="Name"
+              placeholder="Enter your Name"
+            />
+            <TextField
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              name="email"
+              value={email}
+              style={marginSpace}
+              fullWidth
+              label="Email"
+              placeholder="Enter your Email"
+            />
+            <FormControl component="fieldset" style={marginTop}>
+              <FormLabel component="legend">Category</FormLabel>
+              <RadioGroup
+                onChange={(event) => {
+                  setCategory(event.target.value);
+                }}
+                aria-label="category"
+                name="category"
+                style={{ display: "initial" }}
+              >
+                <FormControlLabel
+                  value="LAWYER"
+                  control={<Radio />}
+                  label="Lawyer"
+                />
+                <FormControlLabel
+                  value="CLIENT"
+                  control={<Radio />}
+                  label="Client"  
+                />
+              </RadioGroup>
+            </FormControl>
+            <TextField
+              onChange={(event) => {
+                setPhoneNumber(parseFloat(event.target.value));
+              }}
+              name="phoneno"
+              value={phone_number}
+              style={marginSpace2}
+              fullWidth
+              label="Phone Number"
+              placeholder="Enter your Phone Number"
+            />
+            <TextField
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+              name="password"
+              value={password}
+              style={marginSpace2}
+              fullWidth
+              type="password"
+              label="Password"
+              placeholder="Enter your Password"
+            />
+            <TextField
+              onChange={(event) => {
+                setConfirmPassword(event.target.value);
+              }}
+              name="confirmpass"
+              value={confirm_password}
+              style={marginSpace2}
+              fullWidth
+              type="password"
+              label="Confirm Password"
+              placeholder="Re-enter your Password"
+            />
+            <FormControlLabel
+              control={<Checkbox checked={terms_checked} name="checkedA" onChange={(event) => {
+                setTermsChecked(!terms_checked)
+              }} />}
+              label="I accept the terms and conditions."
+            />
+            <Button
+              style={{ marginTop: "5px" }}
+              type="submit"
+              variant="contained"
+              color="primary"
+              onClick={confirmRegister}
+            >
+              Sign up
+            </Button>
+          </form>
+          <Typography style={marginSpace}>
+            {" "}
+            Already have an account ? <Link onClick={() => history.push("/login")}>Login</Link>
+          </Typography>
+        </Paper>
+      </Grid>
+         </div>
+    </div>
+
+    </>
   );
 };
 
 export default Signup;
+
