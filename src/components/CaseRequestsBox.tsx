@@ -67,7 +67,7 @@ export default function CaseRequestsBox(props: Props) {
               </div>
               <div>
                 <Typography>
-                  <h3>Ananth</h3>
+                  <h3>{props.name}</h3>
                 </Typography>
               </div>
             </div>
@@ -87,14 +87,13 @@ export default function CaseRequestsBox(props: Props) {
           <div className={classes.contentBelow}>
             <div>
               <Typography>
-                {/* <h4>Case Type: {props.case_type} </h4> */}
-                <h4>Case Type: Criminal </h4>
+                <h4>Case Type: {props.case_type} </h4>
               </Typography>
             </div>
             <div>
               <Typography>
                 {/* <h4>Case Type: {props.case_type} </h4> */}
-                <h4>Amount: $100 </h4>
+                <h4>Amount: ${props.amount} </h4>
               </Typography>
             </div>
           </div>
@@ -138,8 +137,7 @@ export default function CaseRequestsBox(props: Props) {
                 marginTop: 15
             }} >
               <Typography>
-                {/* {props.description} */}
-                cffjhasbdjagbdjahbdljhasgduyGDJQ duqgbaljBVLJVlhyjvgjhvKYTVFHGFYTGDLFGASDLFGAEP7FGKBF;IWEGPIWGER;FJBWEIURFGWFRG;A;IWBF;WGRFGEF;IAWBGFAGF
+                {props.description}
               </Typography>
             </div>
           </div>
