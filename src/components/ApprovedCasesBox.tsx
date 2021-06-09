@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -8,6 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
 import { NumberLiteralType } from "typescript";
+import DynamicModal from "./../components/DynamicModal";
 
 const useStyles = makeStyles({
   root: {
@@ -50,10 +51,27 @@ interface Props {
 
 export default function CaseRequestsBox(props: Props) {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
 
   const statusColor = props.status === "Ongoing" ? "#ffff00" : "#00ff00";
 
+  const modalOpen = () => {
+      setOpen(true);
+  }
+
+  const modalClose = () => {
+    setOpen(false);
+}
+
   return (
+    <>
+    <DynamicModal 
+        modalClose={modalClose}
+        modalOpen={modalOpen}
+        open={open}
+        amount={props.amount}
+    />
     <Card className={classes.root}>
       <CardContent>
         <div className={classes.content}>
@@ -115,7 +133,11 @@ export default function CaseRequestsBox(props: Props) {
             }}
           >
             <div style={{ marginRight: "20px" }}>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={() => {
+                  if(props.status === "Ongoing") {
+                      modalOpen();
+                  }
+              }} >
                 {props.status === "Completed"? ' view invoice' : "pay now"}
               </Button>
             </div>
@@ -155,5 +177,6 @@ export default function CaseRequestsBox(props: Props) {
         </div>
       </CardContent>
     </Card>
+    </>
   );
 }
