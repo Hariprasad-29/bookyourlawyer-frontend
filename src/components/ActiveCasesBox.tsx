@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
+import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles({
   root: {
@@ -50,6 +51,8 @@ interface Props {
 
 export default function ActiveCasesBox(props: Props) {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
+
 
   return (
     <Card className={classes.root}>
@@ -131,7 +134,11 @@ export default function ActiveCasesBox(props: Props) {
         </div>
         <div style={{marginRight: -100}}>
             <div style={{marginRight: "-250px"}}>
-               <Button variant="contained" color="primary">Mark as done</Button>
+               <Button variant="contained" color="primary" onClick={() => {
+                 enqueueSnackbar("Case completes successfully", {
+                   variant: "success"
+                 })
+               }} >Mark as done</Button>
               </div>
             </div>
       </CardContent>
