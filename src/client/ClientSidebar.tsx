@@ -20,6 +20,8 @@ import GavelIcon from '@material-ui/icons/Gavel';
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import React, { useEffect, useState } from "react";
 import HomeIcon from "@material-ui/icons/Home";
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -65,9 +67,9 @@ export function ClientSideBar() {
       <List>
         <SideBarItem link={"/client/profile"} icon={<AccountBoxOutlinedIcon />} text="Profile" />
         <SideBarItem link={"/client/addnewcase"} icon={<GroupAddOutlinedIcon />} text="Add New Case" />
-        <SideBarItem link={"/client/caserequests"} icon={<VerifiedUserOutlinedIcon />} text="Case Requests"  />
+        <SideBarItem link={"/client/caserequests"} icon={<PlaylistAddCheckIcon />} text="Case Requests"  />
         <SideBarItem link={"/client/laywerlist"} icon={<GavelIcon />} text="Lawyers List"  />
-        <SideBarItem link={"/client/approvedcase"} icon={<ChromeReaderModeOutlinedIcon />} text="Approved Case"  />
+        <SideBarItem link={"/client/approvedcase"} icon={<VerifiedUserOutlinedIcon />} text="Approved Case"  />
         <SideBarItem link={"/client/transactionhistory"} icon={<ChromeReaderModeOutlinedIcon />} text="Transaction History"  />
       </List>
       <Divider />

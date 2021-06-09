@@ -46,13 +46,15 @@ interface Props {
     phone_no: number;
     city: string;
     case_type: string;
-    status: string; 
+    status?: string; 
     case_id: number;
     description: string;
 }
 
 export default function LawyerListBox(props: Props) {
   const classes = useStyles();
+
+  const statusColor = props.status === "OnGoing" ? "#ffff00" : "#00ff00";
 
   return (
     <Card className={classes.root}>
@@ -129,8 +131,12 @@ export default function LawyerListBox(props: Props) {
             </div>
 
             <div>
-                <Typography style={{marginRight: -55}}>
-                    <h4>Case Status: {props.status} </h4>
+                <Typography style={{marginRight: -55  }}>
+                <h4>Status:  </h4>
+                <h4 style={{
+                    color: statusColor,
+                    marginLeft: 10,
+                }} >{props.status}</h4>
                 </Typography>
             </div>
           </div>

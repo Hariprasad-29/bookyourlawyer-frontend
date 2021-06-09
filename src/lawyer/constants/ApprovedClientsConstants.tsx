@@ -6,7 +6,7 @@ export const APPROVED_CLIENTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Chennai",
-        status: "On Progress",
+        status: "OnGoing",
         case_id: "2",
         description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },

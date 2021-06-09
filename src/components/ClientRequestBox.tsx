@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
+import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles({
   root: {
@@ -51,6 +52,14 @@ interface Props {
 
 export default function LawyerListBox(props: Props) {
   const classes = useStyles();
+
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleSubmit = () => {
+    enqueueSnackbar("Case added successfully!", {
+      variant: "success"
+    });
+  }
 
   return (
     <Card className={classes.root}>
