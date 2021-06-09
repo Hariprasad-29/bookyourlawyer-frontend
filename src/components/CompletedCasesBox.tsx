@@ -40,16 +40,14 @@ const useStyles = makeStyles({
 });
 
 interface Props {
-    name: string;
+    client_name: string;
     id: string;
-    email: string;
-    phone_no: number;
+    description: string;
     city: string;
     case_type: string;
-    description: string;
 }
 
-export default function LawyerListBox(props: Props) {
+export default function CompletedCasesBox(props: Props) {
   const classes = useStyles();
 
   return (
@@ -64,16 +62,26 @@ export default function LawyerListBox(props: Props) {
                   marginRight: 20,
                 }}
               >
-                <Avatar alt={props.name} />
+                <Avatar alt={props.client_name} />
               </div>
               <div>
                 <Typography>
-                  <h3>{props.name}</h3>
+                  <h3>{props.client_name}</h3>
                 </Typography>
               </div>
             </div>
             <div>
-            <div
+              <div>
+                <Typography
+                  style={{
+                    marginTop: -15,
+                    marginRight: 95,
+                  }}
+                >
+                  <h4>Client ID: #000{props.id} </h4>
+                </Typography>
+              </div>
+              <div
           style={{
             display: "flex",
             justifyContent: "center",
@@ -101,24 +109,6 @@ export default function LawyerListBox(props: Props) {
             </div>
           </div>
         </div>
-              <div>
-                <Typography
-                  style={{
-                    marginTop: -15,
-                    marginRight: 95,
-                  }}
-                >
-                  <h4>Client ID: #000{props.id} </h4>
-                </Typography>
-              </div>
-              <div style={{
-                  marginRight: 95,
-                  marginTop: 45
-              }}>
-                  <Typography>
-                      <h4>Email: {props.email} </h4>
-                  </Typography>
-              </div>
             </div>
           </div>
           <div className={classes.contentBelow}>
@@ -131,19 +121,6 @@ export default function LawyerListBox(props: Props) {
               <Typography>
                 <h4>City: {props.city} </h4>
               </Typography>
-            </div>
-            <div>
-                <Typography>
-                    <h4>Phone Number: {props.phone_no} </h4>
-                </Typography>
-            </div>
-              <div style={{display: "flex"}}>
-            <div style={{marginRight: "20px"}}>
-               <Button variant="contained" color="primary">Accept</Button>
-              </div>
-             <div>
-               <Button variant="contained" color="primary">Reject</Button>
-             </div>
             </div>
           </div>
         </div>

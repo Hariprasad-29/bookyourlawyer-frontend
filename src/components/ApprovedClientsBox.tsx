@@ -92,6 +92,34 @@ export default function LawyerListBox(props: Props) {
                       <h4>Email: {props.email} </h4>
                   </Typography>
               </div>
+              <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            maxWidth: 800,
+            wordBreak: "break-all",
+          }}
+        >
+          <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+          }}>
+            <div style={{
+                marginRight: 30,
+                wordBreak: "keep-all",
+            }}>
+              <h3>Case Description:</h3>
+            </div>
+            <div style={{
+                marginTop: 15
+            }} >
+              <Typography>
+                {/* {props.description} */}
+                cffjhasbdjagbdjahbdljhasgduyGDJQ duqgbaljBVLJVlhyjvgjhvKYTVFHGFYTGDLFGASDLFGAEP7FGKBF;IWEGPIWGER;FJBWEIURFGWFRG;A;IWBF;WGRFGEF;IAWBGFAGF
+              </Typography>
+            </div>
+          </div>
+        </div>
               <div>
               <Typography>
                 <h4>Case ID: {props.case_id}</h4>

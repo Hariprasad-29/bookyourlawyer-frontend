@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LawyerPanel } from "./LawyerPanel";
 import ClientRequestBox from "./../components/ClientRequestBox";
-import { CLIENT_REQUESTS } from "./constants/ClientRequestsConstants"
+import { CLIENT_REQUESTS } from "./constants/ClientRequestsConstants";
 
 
 function ClientRequests() {
@@ -19,6 +19,7 @@ function ClientRequests() {
               city={item.city}
               email={item.email}
               phone_no={item.phone_no}
+              description={item.description}
             />
           );
         })}
