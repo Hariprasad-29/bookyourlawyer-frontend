@@ -30,6 +30,7 @@
 .login {
   margin-left: 900px;
   margin-top: 90px;
+  z-index: 800px;
 }
 
 .register {

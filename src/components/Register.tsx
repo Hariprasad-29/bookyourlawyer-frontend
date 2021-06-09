@@ -38,10 +38,11 @@ mutation register(
 const Signup = () => {
   const paperStyle = {
     padding: 20,
-    height: "80vh",
+    maxHeight: 800,
     width: 340,
+    marginBottom: 50,
     margin: "50px auto",
-    borderRadius: "20px"
+    borderRadius: "20px",
   };
 
   const history = useHistory();
@@ -204,7 +205,11 @@ const Signup = () => {
               }} />}
               label="I accept the terms and conditions."
             />
-            <Button
+           <div style={{
+             display: "flex",
+             flexDirection: "column",
+           }} >
+           <Button
               style={{ marginTop: "5px" }}
               type="submit"
               variant="contained"
@@ -213,6 +218,17 @@ const Signup = () => {
             >
               Sign up
             </Button>
+            <Button
+                type="button"
+                color="defailt"
+                variant="contained"
+                style={{marginTop: 20,}}
+                fullWidth
+                onClick={() => history.push("/login")}
+              >
+                Login
+              </Button>
+           </div>
           </form>
           <Typography style={marginSpace}>
             {" "}
