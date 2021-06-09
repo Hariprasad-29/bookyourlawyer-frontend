@@ -2,7 +2,7 @@ export const ACTIVE_CASES = [
     {
         client_name: "Barry Allen",
         id: "1",
-        description: "vefffqefq",
+        description: "vefffqefqcjekbfaofuhwaoifhapvianvoaivhnaoivhivnifapidpdowjfaoivaovbaoievhnaivnapanvivoaivain",
         city: "Chennai",
         case_type: "Criminal",
 

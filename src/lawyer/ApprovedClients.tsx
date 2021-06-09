@@ -18,6 +18,7 @@ function ApprovedClients() {
               phone_no={item.phone_no}
               status={item.status}
               case_id={item.case_id}
+              description={item.description}
             />
           );
         })}

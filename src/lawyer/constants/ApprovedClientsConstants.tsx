@@ -7,7 +7,8 @@ export const APPROVED_CLIENTS = [
         phone_no: 1234567890,
         city: "Chennai",
         status: "On Progress",
-        case_id: "2"
+        case_id: "2",
+        description: "afkuabfoafbaowabofiabf"
       },
       {
         name: "Rajesh",
@@ -17,6 +18,7 @@ export const APPROVED_CLIENTS = [
         phone_no: 1234567890,
         city: "Bangalore",
         status: "Completed",
-        case_id: "1"
+        case_id: "1",
+        description: "afkuabfoafbaowabofiabf"
       }
 ];

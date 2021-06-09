@@ -6,6 +6,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Chennai",
+        description: "afeajaegnaoiegaoeignaoe"
       },
       {
         name: "Rajesh",
@@ -14,6 +15,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Bangalore",
+        description: "afeajaegnaoiegaoeignaoe"
       },
       {
         name: "Penny",
@@ -22,6 +24,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Mumbai",
+        description: "afeajaegnaoiegaoeignaoe"
       },
       {
         name: "Chandler",
@@ -30,6 +33,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Kolkatta",
+        description: "afeajaegnaoiegaoeignaoe"
       },
       {
         name: "Leonard",
@@ -38,5 +42,6 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Goa",
+        description: "afeajaegnaoiegaoeignaoe"
       },
 ];

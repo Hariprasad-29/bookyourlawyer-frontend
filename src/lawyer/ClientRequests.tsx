@@ -19,6 +19,7 @@ function ClientRequests() {
               city={item.city}
               email={item.email}
               phone_no={item.phone_no}
+              description={item.description}
             />
           );
         })}

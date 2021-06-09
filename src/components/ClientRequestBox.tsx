@@ -46,6 +46,7 @@ interface Props {
     phone_no: number;
     city: string;
     case_type: string;
+    description: string;
 }
 
 export default function LawyerListBox(props: Props) {
@@ -72,6 +73,34 @@ export default function LawyerListBox(props: Props) {
               </div>
             </div>
             <div>
+            <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            maxWidth: 800,
+            wordBreak: "break-all",
+          }}
+        >
+          <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+          }}>
+            <div style={{
+                marginRight: 30,
+                wordBreak: "keep-all",
+            }}>
+              <h3>Case Description:</h3>
+            </div>
+            <div style={{
+                marginTop: 15,
+                marginRight: "20px"
+            }} >
+              <Typography>
+                {props.description}
+              </Typography>
+            </div>
+          </div>
+        </div>
               <div>
                 <Typography
                   style={{

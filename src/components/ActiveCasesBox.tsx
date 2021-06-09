@@ -81,14 +81,35 @@ export default function ActiveCasesBox(props: Props) {
                   <h4>Client ID: #000{props.id} </h4>
                 </Typography>
               </div>
-              <div style={{
-                  marginRight: 95,
-                  marginTop: 45
-              }}>
-                  <Typography>
-                      <h4>Description: {props.description} </h4>
-                  </Typography>
-              </div>
+              <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            maxWidth: 800,
+            wordBreak: "break-all",
+          }}
+        >
+          <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+          }}>
+            <div style={{
+                marginRight: 30,
+                wordBreak: "keep-all",
+            }}>
+              <h3>Case Description:</h3>
+            </div>
+            <div style={{
+                marginTop: 15,
+                marginRight: "20px"
+            }} >
+              <Typography>
+                {props.description}
+              </Typography>
+            </div>
+          </div>
+        </div>
+        <br/>
             </div>
           </div>
           <div className={classes.contentBelow}>
@@ -103,7 +124,7 @@ export default function ActiveCasesBox(props: Props) {
               </Typography>
             </div>
               <div style={{display: "flex"}}>
-            <div style={{marginRight: "20px"}}>
+            <div style={{marginRight: "-250px"}}>
                <Button variant="contained" color="primary">Mark as done</Button>
               </div>
             </div>
