@@ -37,11 +37,11 @@ const Profile = () => {
   };
 
   const [profile, setProfile] = useState({
-    namee: "",
-    email: "",
-    phoneno: "",
-    district: "",
-    state: "",
+    namee: "Ananth",
+    email: "ananthsekar@gmail.com",
+    phoneno: "1234567890",
+    district: "Tuticorin",
+    state: "tamil Nadu",
   });
 
   const [terms, setTerms] = useState(false);
