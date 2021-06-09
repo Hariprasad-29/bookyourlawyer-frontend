@@ -48,6 +48,7 @@ interface Props {
     case_type: string;
     status: string; 
     case_id: number;
+    description: string;
 }
 
 export default function LawyerListBox(props: Props) {
@@ -78,7 +79,7 @@ export default function LawyerListBox(props: Props) {
                 <Typography
                   style={{
                     marginTop: -15,
-                    marginRight: 95,
+                    marginRight: 170,
                   }}
                 >
                   <h4>Client ID: #000{props.id} </h4>
@@ -86,9 +87,10 @@ export default function LawyerListBox(props: Props) {
               </div>
               <div style={{
                   marginRight: 95,
-                  marginTop: 45
+                  marginTop: 45,
+                  marginLeft: 10
               }}>
-                  <Typography>
+                  <Typography >
                       <h4>Email: {props.email} </h4>
                   </Typography>
               </div>
@@ -100,28 +102,10 @@ export default function LawyerListBox(props: Props) {
             wordBreak: "break-all",
           }}
         >
-          <div style={{
-              display: "flex",
-              justifyContent: "space-between",
-          }}>
-            <div style={{
-                marginRight: 30,
-                wordBreak: "keep-all",
-            }}>
-              <h3>Case Description:</h3>
-            </div>
-            <div style={{
-                marginTop: 15
-            }} >
-              <Typography>
-                {/* {props.description} */}
-                cffjhasbdjagbdjahbdljhasgduyGDJQ duqgbaljBVLJVlhyjvgjhvKYTVFHGFYTGDLFGASDLFGAEP7FGKBF;IWEGPIWGER;FJBWEIURFGWFRG;A;IWBF;WGRFGEF;IAWBGFAGF
-              </Typography>
-            </div>
-          </div>
+
         </div>
               <div>
-              <Typography>
+              <Typography style={{marginLeft: -210}}>
                 <h4>Case ID: {props.case_id}</h4>
               </Typography>
             </div>
@@ -134,23 +118,42 @@ export default function LawyerListBox(props: Props) {
               </Typography>
             </div>
             <div>
-              <Typography>
+              <Typography style={{marginRight: 48}}>
                 <h4>City: {props.city} </h4>
               </Typography>
             </div>
             <div>
-                <Typography>
+                <Typography style={{marginRight: -68}}>
                     <h4>Phone Number: {props.phone_no} </h4>
                 </Typography>
             </div>
 
             <div>
-                <Typography>
+                <Typography style={{marginRight: -55}}>
                     <h4>Case Status: {props.status} </h4>
                 </Typography>
             </div>
           </div>
         </div>
+        <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginRight: 300
+          }}>
+            <div style={{
+                marginRight: 30,
+                wordBreak: "keep-all",
+            }}>
+              <h3>Case Description:</h3>
+            </div>
+            <div style={{
+                marginTop: 15
+            }} >
+              <Typography>
+                {props.description}
+              </Typography>
+            </div>
+          </div>
       </CardContent>
     </Card>
   );

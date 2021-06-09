@@ -81,7 +81,24 @@ export default function CompletedCasesBox(props: Props) {
                   <h4>Client ID: #000{props.id} </h4>
                 </Typography>
               </div>
-              <div
+
+            </div>
+          </div>
+          <div className={classes.contentBelow}>
+            <div>
+              <Typography>
+                <h4>Case Type: {props.case_type} </h4>
+              </Typography>
+            </div>
+            <div>
+              <Typography>
+                <h4>City: {props.city} </h4>
+              </Typography>
+            </div>
+            
+          </div>
+        </div>
+        <div
           style={{
             display: "flex",
             justifyContent: "center",
@@ -90,7 +107,7 @@ export default function CompletedCasesBox(props: Props) {
           }}
         >
           <div style={{
-              display: "flex",
+              display: "flex",  
               justifyContent: "space-between",
           }}>
             <div style={{
@@ -105,21 +122,6 @@ export default function CompletedCasesBox(props: Props) {
             }} >
               <Typography>
                 {props.description}
-              </Typography>
-            </div>
-          </div>
-        </div>
-            </div>
-          </div>
-          <div className={classes.contentBelow}>
-            <div>
-              <Typography>
-                <h4>Case Type: {props.case_type} </h4>
-              </Typography>
-            </div>
-            <div>
-              <Typography>
-                <h4>City: {props.city} </h4>
               </Typography>
             </div>
           </div>

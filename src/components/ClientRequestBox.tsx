@@ -73,34 +73,7 @@ export default function LawyerListBox(props: Props) {
               </div>
             </div>
             <div>
-            <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            maxWidth: 800,
-            wordBreak: "break-all",
-          }}
-        >
-          <div style={{
-              display: "flex",
-              justifyContent: "space-between",
-          }}>
-            <div style={{
-                marginRight: 30,
-                wordBreak: "keep-all",
-            }}>
-              <h3>Case Description:</h3>
-            </div>
-            <div style={{
-                marginTop: 15,
-                marginRight: "20px"
-            }} >
-              <Typography>
-                {props.description}
-              </Typography>
-            </div>
-          </div>
-        </div>
+
               <div>
                 <Typography
                   style={{
@@ -137,13 +110,33 @@ export default function LawyerListBox(props: Props) {
                     <h4>Phone Number: {props.phone_no} </h4>
                 </Typography>
             </div>
-              <div style={{display: "flex"}}>
-            <div style={{marginRight: "20px"}}>
-               <Button variant="contained" color="primary">Accept</Button>
+                      <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginRight: -25
+          }}>
+            <div style={{
+                marginRight: 10,
+                wordBreak: "keep-all",
+                marginLeft: -220
+            }}>
+              <h3>Case Description:</h3>
+            </div>
+            <div style={{
+                marginTop: 15
+            }} >
+              <Typography>
+                {props.description}
+              </Typography>
+            </div>
+          </div>
+            <div style={{display: "flex"}}>
+              <div style={{marginRight: "20px"}}>
+                <Button variant="contained" color="primary">Accept</Button>
+                </div>
+              <div>
+                <Button variant="contained" color="primary">Reject</Button>
               </div>
-             <div>
-               <Button variant="contained" color="primary">Reject</Button>
-             </div>
             </div>
           </div>
         </div>

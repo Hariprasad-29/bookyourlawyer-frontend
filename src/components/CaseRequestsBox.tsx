@@ -93,7 +93,7 @@ export default function CaseRequestsBox(props: Props) {
             <div>
               <Typography>
                 {/* <h4>Case Type: {props.case_type} </h4> */}
-                <h4>Amount: ${props.amount} </h4>
+                <h4>Amount: ₹{props.amount} </h4>
               </Typography>
             </div>
           </div>

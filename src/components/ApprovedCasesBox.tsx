@@ -132,6 +132,7 @@ export default function CaseRequestsBox(props: Props) {
             justifyContent: "center",
             maxWidth: 800,
             wordBreak: "break-all",
+            
           }}
         >
           <div style={{

@@ -6,7 +6,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Chennai",
-        description: "afeajaegnaoiegaoeignaoe"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },
       {
         name: "Rajesh",
@@ -15,7 +15,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Bangalore",
-        description: "afeajaegnaoiegaoeignaoe"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },
       {
         name: "Penny",
@@ -24,7 +24,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Mumbai",
-        description: "afeajaegnaoiegaoeignaoe"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },
       {
         name: "Chandler",
@@ -33,7 +33,7 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Kolkatta",
-        description: "afeajaegnaoiegaoeignaoe"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },
       {
         name: "Leonard",
@@ -42,6 +42,6 @@ export const CLIENT_REQUESTS = [
         email: "ananth@gmail.com",
         phone_no: 1234567890,
         city: "Goa",
-        description: "afeajaegnaoiegaoeignaoe"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },
 ];

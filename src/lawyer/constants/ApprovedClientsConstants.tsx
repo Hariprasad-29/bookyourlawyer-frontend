@@ -8,7 +8,7 @@ export const APPROVED_CLIENTS = [
         city: "Chennai",
         status: "On Progress",
         case_id: "2",
-        description: "afkuabfoafbaowabofiabf"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       },
       {
         name: "Rajesh",
@@ -19,6 +19,6 @@ export const APPROVED_CLIENTS = [
         city: "Bangalore",
         status: "Completed",
         case_id: "1",
-        description: "afkuabfoafbaowabofiabf"
+        description: "This is a demo description of the case that is being being handled by the lawyer which inturn is the case of the client so please dont consider this!"
       }
 ];
